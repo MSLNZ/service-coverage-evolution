@@ -214,7 +214,9 @@
     </div>
 
     <video id="videoPlayer" preload="auto" controls disablepictureinpicture>
-        <source src="videos/PR/ALL/New Zealand.mp4" type="video/mp4">
+        <!-- Pick the src to serve the videos from -->
+        <source src="https://github.com/MSLNZ/service-coverage-evolution/raw/refs/heads/main/videos/PR/All/New Zealand.mp4" type="video/mp4">
+        <!-- <source src="videos/PR/All/New Zealand.mp4" type="video/mp4"> -->
         Your browser does not support the video tag.
     </video>
 
@@ -225,7 +227,11 @@
         const videoPlayer = document.getElementById("videoPlayer");
 
         function updateVideoSource() {
-            videoPlayer.src = "videos/" + metrologyAreaSelect.value + "/" + cohortSelect.value + "/" + participantSelect.value + ".mp4";
+            path = metrologyAreaSelect.value + "/" + cohortSelect.value + "/" + participantSelect.value + ".mp4";
+
+            // Pick the src to serve the videos from
+            //videoPlayer.src = "videos/" + path;
+            videoPlayer.src = "https://github.com/MSLNZ/service-coverage-evolution/raw/refs/heads/main/videos/" + path;
             videoPlayer.load();
         }
 
