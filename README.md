@@ -1,6 +1,6 @@
 Quantifying evolution of service coverage for CIPM MRA participants.
 
-The website to visualize the results is available [here](https://mslnz.github.io/service-coverage-evolution/).
+The website to visualise the results is available [here](https://mslnz.github.io/service-coverage-evolution/).
 
 ## Overview
 
