@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.measurement.govt.nz/_resources/themes/msl/images/favicon.ico?m=1756938936">
+    <title>Service Coverage Evolution</title>
+    <style>
+        h1 {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: min(100%, 600px);
+            display: flex;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px; /* This adds spacing between the form groups */
+            flex-wrap: wrap; /* Allows the groups to wrap to the next line on small screens */
+        }
+
+        .form-group {
+            flex: 1 1 200px;  /* Allows the groups to grow, shrink, and have a minimum width */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;  /* Aligns the label and select to the left */
+        }
+
+        .form-group label {
+            margin-bottom: 5px; /* Adds space between the label and the select */
+            font-weight: bold;
+        }
+
+        .form-group select {
+            width: 100%; /* Makes the select element fill its container */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 5px; /* Adds space between the label and the select */
+        }
+
+        .form-group select option {
+            background-color: #f4eee4;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Evolution of service coverage for CIPM MRA participants</h1>
+
+    <p>
+        The plots shown in the videos below are box and whisker plots showing the number
+        of individual service categories claimed per participant contributing to the BIPM KCDB.
+        The possible individual services are those listed in the
+        <a href="https://www.bipm.org/en/cipm-mra/cipm-mra-documents/service-categories" target="_blank">Classification of Services documents</a>
+        created by each of the consultative committees. Details of how the plots were constructed can be found in a report
+        <a href="report/report.pdf">Quantifying evolution of service coverage for CIPM MRA participants</a>.
+
+        <br /><br />
+
+        The videos show the evolution by year of the number of services claimed. You may select to
+        see either the evolution of services claimed across the Physics domain, or for one of the
+        7 areas in the Physics domain. Then select to view the evolution of the distribution of
+        number of claims for a cohort &ndash; either all participants, or a subset of participants who
+        have a broad range of claims in the Physics domain (at least one claim in 6 of the 7 areas).
+        Finally, select one participant to overlay on the box and whisker plots.
+
+        <br /><br />
+
+        Then press play, see the years tick over, and watch the growth of services claimed. Feel free to be
+        in touch with comments or questions: <a href="mailto:info@measurement.govt.nz">info@measurement.govt.nz</a>.
+    </p>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="metrologyArea">Metrology Area:</label>
+            <select id="metrologyArea">
+                <option value="AUV">AUV</option>
+                <option value="EM">EM</option>
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="PR" selected>PR</option>
+                <option value="T">T</option>
+                <option value="TF">TF</option>
+                <option value="physics">Physics</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cohort">Cohort:</label>
+            <select id="cohort">
+                <option value="All" selected>All MRA</option>
+                <option value="Broad">Broad Range</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="participant">Participant:</label>
+            <select id="participant">
+                <option value="Albania">Albania</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="BIPM - International Organization">BIPM - International Organization</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="CARICOM (Caribbean Community)">CARICOM (Caribbean Community)</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Canada">Canada</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Chinese Taipei">Chinese Taipei</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Czechia">Czechia</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="European Union">European Union</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Greece">Greece</option>
+                <option value="Hong Kong, China">Hong Kong, China</option>
+                <option value="Hungary">Hungary</option>
+                <option value="IAEA - International Organization">IAEA - International Organization</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Iran (Islamic Republic of)">Iran (Islamic Republic of)</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Korea, Republic of">Korea, Republic of</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Malta">Malta</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="New Zealand" selected>New Zealand</option>
+                <option value="North Macedonia">North Macedonia</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Panama">Panama</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Romania">Romania</option>
+                <option value="Russian Federation">Russian Federation</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkiye">Türkiye</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Viet Nam">Viet Nam</option>
+                <option value="WMO - International Organization">WMO - International Organization</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+        </div>
+    </div>
+
+    <video id="videoPlayer" preload="auto" controls disablepictureinpicture>
+        <source src="videos/PR/ALL/New Zealand.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        const metrologyAreaSelect = document.getElementById("metrologyArea");
+        const cohortSelect = document.getElementById("cohort");
+        const participantSelect = document.getElementById("participant");
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        function updateVideoSource() {
+            videoPlayer.src = "videos/" + metrologyAreaSelect.value + "/" + cohortSelect.value + "/" + participantSelect.value + ".mp4";
+            videoPlayer.load();
+        }
+
+        metrologyAreaSelect.addEventListener("change", updateVideoSource);
+        cohortSelect.addEventListener("change", updateVideoSource);
+        participantSelect.addEventListener("change", updateVideoSource);
+    </script>
+
+</body>
+
+</html>
