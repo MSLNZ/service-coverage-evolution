@@ -18,4 +18,4 @@ biber report
 pdflatex report.tex
 ```
 
-The `KCDB Data.xlsx` file is used to create the images in the `figures` directory. Each Sheet corresponds to a `output\services-by-branch-all-countries\YEAR.txt` file.
+The `KCDB Data.xlsx` file is used to create the images in the `figures` directory. Each Sheet corresponds to an `output\services-by-branch-all-countries\<YEAR>.txt` file.
